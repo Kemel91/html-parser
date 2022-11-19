@@ -1,0 +1,19 @@
+{
+    "name": "kemel91/html-parser",
+    "description": "Test work",
+    "type": "project",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Kemel91\\HtmlParser\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Kemel91",
+            "email": "studentnote@mail.ru"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}

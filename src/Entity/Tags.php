@@ -5,30 +5,43 @@ namespace Kemel91\HtmlParser\Entity;
 
 class Tags implements \Countable
 {
-    private array $tags;
+    private array $items;
 
     public function __construct(array $tags)
     {
-        $this->tags = $tags;
+        $this->items = $tags;
     }
 
-    public function get(): array
+    public function all(): array
     {
-        return $this->tags;
+        return $this->items;
     }
 
     public function unique(): array
     {
-        return \array_unique($this->tags);
+        return \array_unique($this->items);
+    }
+
+    /**
+     * @return array{string, int}
+     */
+    public function groupInKeys(): array
+    {
+        $array = [];
+        foreach ($this->all() as $tag) {
+            $array[$tag] = isset($array[$tag]) ? ++$array[$tag] : 1;
+        }
+
+        return $array;
     }
 
     public function count(): int
     {
-        return \count($this->tags);
+        return \count($this->items);
     }
 
     public function __toString(): string
     {
-        return \implode(', ', $this->get());
+        return \implode(', ', $this->all());
     }
 }

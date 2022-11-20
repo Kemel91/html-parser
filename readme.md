@@ -9,7 +9,11 @@
 Не нужно придерживаться принципа KISS, приветствуется преувеличение уровня абстракции.
 
 ## Basic Usage
-
+### Install
+```bash
+composer require kemel91/html-parser
+```
+### Usage
 ```php
 $url = 'https://www.w3schools.com/html/';
 $urlParser = new \Kemel91\HtmlParser\UrlParser($url);
